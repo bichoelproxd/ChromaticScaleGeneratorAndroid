@@ -43,7 +43,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Instalar JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: "17"
@@ -51,13 +51,24 @@ jobs:
       - name: Descargar el codigo fuente de Parselmouth/Praat
         run: bash scripts/fetch_praat.sh
 
-      - name: Instalar el SDK de Android
-        uses: android-actions/setup-android@v3
-
+      # Los runners de GitHub (ubuntu-24.04) ya traen el SDK de Android en $ANDROID_HOME
+      # con sdkmanager, asi que solo se instalan las piezas que necesita este proyecto.
       - name: Instalar NDK, CMake y plataforma de Android
         run: |
-          yes | sdkmanager --licenses > /dev/null || true
-          sdkmanager --install \
+          set -euo pipefail
+          SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          SDKMANAGER="$(command -v sdkmanager || true)"
+          if [ -z "$SDKMANAGER" ]; then
+            SDKMANAGER="$(ls "$SDK"/cmdline-tools/*/bin/sdkmanager | head -n1)"
+          fi
+          echo "SDK: $SDK"
+          echo "sdkmanager: $SDKMANAGER"
+          echo "ANDROID_HOME=$SDK" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$SDK" >> "$GITHUB_ENV"
+          set +o pipefail
+          yes | "$SDKMANAGER" --sdk_root="$SDK" --licenses > /dev/null
+          set -o pipefail
+          "$SDKMANAGER" --sdk_root="$SDK" --install \
             "platforms;${ANDROID_PLATFORM}" \
             "build-tools;${ANDROID_BUILD_TOOLS}" \
             "ndk;${ANDROID_NDK}" \
