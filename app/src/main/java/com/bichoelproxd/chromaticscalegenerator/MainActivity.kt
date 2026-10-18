@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bichoelproxd.chromaticscalegenerator.databinding.ActivityMainBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.io.File
 
 /** Pantalla principal: los mismos controles que la ventana de PC (app_ui.py). */
@@ -45,6 +46,15 @@ class MainActivity : AppCompatActivity() {
             this, android.R.layout.simple_spinner_dropdown_item, OCTAVES
         )
 
+        // Idioma: se pregunta la primera vez que se abre la app y se puede cambiar con el boton.
+        val currentLanguage = LanguageManager.savedTag(this) ?: LanguageManager.suggestedTag()
+        binding.languageButton.text =
+            getString(R.string.language) + ": " + LanguageManager.nativeNameOf(currentLanguage)
+        binding.languageButton.setOnClickListener { showLanguageDialog(cancelable = true) }
+        if (LanguageManager.savedTag(this) == null) {
+            showLanguageDialog(cancelable = false)
+        }
+
         binding.dirPicker.setOnClickListener { pickFolder.launch(treeUri) }
         binding.chromGenerate.setOnClickListener { generate() }
         binding.pitchedCheck.setOnCheckedChangeListener { _, checked ->
@@ -70,6 +80,21 @@ class MainActivity : AppCompatActivity() {
                 runOnUiThread { setStatus(getString(R.string.error_prefix, e.message ?: e.toString())) }
             }
         }
+    }
+
+    /** Lista de idiomas. AppCompat vuelve a crear la pantalla ya traducida al elegir uno. */
+    private fun showLanguageDialog(cancelable: Boolean) {
+        val current = LanguageManager.savedTag(this) ?: LanguageManager.suggestedTag()
+        val names = LanguageManager.LANGUAGES.map { it.nativeName }.toTypedArray()
+        val checked = LanguageManager.LANGUAGES.indexOfFirst { it.tag == current }.coerceAtLeast(0)
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.choose_language)
+            .setSingleChoiceItems(names, checked) { dialog, which ->
+                dialog.dismiss()
+                LanguageManager.choose(this, LanguageManager.LANGUAGES[which].tag)
+            }
+            .setCancelable(cancelable)
+            .show()
     }
 
     private fun onFolderPicked(uri: Uri) {
@@ -101,6 +126,7 @@ class MainActivity : AppCompatActivity() {
         busy = value
         binding.chromGenerate.isEnabled = !value
         binding.dirPicker.isEnabled = !value
+        binding.languageButton.isEnabled = !value
         binding.progressBar.visibility = if (value) View.VISIBLE else View.INVISIBLE
         if (value) {
             binding.progressBar.isIndeterminate = true

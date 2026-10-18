@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Chromatic Scale Generator</string>
+    <string name="language">Language</string>
+    <!-- Shown the first time the app opens, before a language is chosen: same text in every language -->
+    <string name="choose_language" translatable="false">Choose your language / Elige tu idioma / Escolha o idioma</string>
     <string name="sample_folder">Sample folder:</string>
     <string name="select_folder">Select a folder</string>
     <string name="no_folder_selected">No folder selected</string>

@@ -21,10 +21,10 @@ while fileReadable (sampleDir$ + "/" + string$ (fileCount + 1) + ".wav")
 	fileCount += 1
 endwhile
 if fileCount = 0
-	exitScript: "No se encontro 1.wav en la carpeta de muestras."
+	exitScript: "1.wav was not found in the sample folder."
 endif
 if semitones < 1
-	exitScript: "El rango debe ser al menos 1."
+	exitScript: "Range must be at least 1."
 endif
 
 # Silencio entre muestras

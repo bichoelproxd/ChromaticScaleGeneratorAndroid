@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Chromatic Scale Generator</string>
+    <string name="language">Idioma</string>
     <string name="sample_folder">Carpeta de muestras:</string>
     <string name="select_folder">Seleccionar carpeta</string>
     <string name="no_folder_selected">Ninguna carpeta seleccionada</string>

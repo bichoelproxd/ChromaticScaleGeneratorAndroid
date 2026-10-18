@@ -24,6 +24,16 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
+        <!-- Idioma (se puede cambiar en cualquier momento) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/languageButton"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginBottom="8dp"
+            android:text="@string/language" />
+
         <!-- Carpeta de muestras -->
         <TextView
             android:id="@+id/dirText"

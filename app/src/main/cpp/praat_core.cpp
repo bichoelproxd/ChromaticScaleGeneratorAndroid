@@ -46,12 +46,12 @@ void infoProc(const char32 *message, size_t i) {
 
 void crashProc(const char32 *message) {
 	// Igual que Parselmouth: convertir un fallo fatal de Praat en una excepcion de C++.
-	throw PraatError(std::string("Praat se detuvo con un error fatal: ") + Melder_peek32to8(message));
+	throw PraatError(std::string("Praat stopped with a fatal error: ") + Melder_peek32to8(message));
 }
 
 void warningProc(const char32 *message) {
 	// Los avisos de Praat se anaden a la salida del script.
-	std::string text = std::string("[aviso de Praat] ") + Melder_peek32to8(message) + "\n";
+	std::string text = std::string("[Praat warning] ") + Melder_peek32to8(message) + "\n";
 	if (g_output)
 		g_output->append(text);
 	if (g_onInfo && *g_onInfo)
@@ -96,7 +96,7 @@ std::string initialize(const std::string &homeDir) {
 	} catch (MelderError) {
 		std::string message = Melder_peek32to8(Melder_getError());
 		Melder_clearError();
-		throw PraatError("No se pudo inicializar Praat: " + message);
+		throw PraatError("Could not initialize Praat: " + message);
 	}
 	return CHROMATIC_XSTR(PRAAT_VERSION_STR);
 }
