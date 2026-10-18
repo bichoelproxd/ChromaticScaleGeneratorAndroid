@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/titleLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Carpeta de muestras -->
+        <TextView
+            android:id="@+id/dirText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sample_folder"
+            android:textColor="@android:color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dirPicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_folder" />
+
+        <TextView
+            android:id="@+id/dirPath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/no_folder_selected"
+            android:textColor="#555555" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/folder_hint"
+            android:textColor="#777777"
+            android:textSize="12sp" />
+
+        <!-- Nota inicial -->
+        <TextView
+            android:id="@+id/startNoteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/starting_note"
+            android:textColor="@android:color/black" />
+
+        <Spinner
+            android:id="@+id/startNoteChoice"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <!-- Octava inicial -->
+        <TextView
+            android:id="@+id/startOctaveText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/starting_octave"
+            android:textColor="@android:color/black" />
+
+        <Spinner
+            android:id="@+id/startOctaveChoice"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <!-- Rango -->
+        <TextView
+            android:id="@+id/rangeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/range"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/rangeInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:text="24"
+            tools:ignore="HardcodedText,LabelFor" />
+
+        <!-- Separacion entre muestras -->
+        <TextView
+            android:id="@+id/gapText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/sample_gap"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/gapInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:text="0.1"
+            tools:ignore="HardcodedText,LabelFor" />
+
+        <CheckBox
+            android:id="@+id/pitchedCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="@string/pitched" />
+
+        <CheckBox
+            android:id="@+id/samplesCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/dump_samples" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/chromGenerate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/generate" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/status_ready"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+</ScrollView>

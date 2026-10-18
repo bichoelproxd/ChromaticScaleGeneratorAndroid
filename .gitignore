@@ -1,0 +1,22 @@
+# Codigo fuente de Parselmouth/Praat (se descarga con scripts/fetch_praat.sh)
+third_party/
+
+# Gradle / Android
+.gradle/
+build/
+app/build/
+app/.cxx/
+.cxx/
+local.properties
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Compilacion de prueba en PC
+build-host/

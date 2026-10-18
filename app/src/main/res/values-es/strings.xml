@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chromatic Scale Generator</string>
+    <string name="sample_folder">Carpeta de muestras:</string>
+    <string name="select_folder">Seleccionar carpeta</string>
+    <string name="no_folder_selected">Ninguna carpeta seleccionada</string>
+    <string name="starting_note">Nota inicial:</string>
+    <string name="starting_octave">Octava inicial:</string>
+    <string name="range">Rango:</string>
+    <string name="sample_gap">Separación entre muestras (segundos):</string>
+    <string name="pitched">Con tono ajustado</string>
+    <string name="dump_samples">Guardar cada muestra con su tono</string>
+    <string name="generate">Generar cromática</string>
+    <string name="folder_hint">La carpeta debe contener las muestras con los nombres 1.wav, 2.wav, 3.wav… Los resultados (chromatic.wav y la carpeta pitched_samples) se guardan en esa misma carpeta.</string>
+
+    <string name="status_ready">Listo.</string>
+    <string name="status_praat_ready">Praat %1$s listo.</string>
+    <string name="status_copying">Leyendo las muestras…</string>
+    <string name="status_working">Generando… %1$d / %2$d</string>
+    <string name="status_saving">Guardando los resultados en la carpeta…</string>
+    <string name="status_done">Listo. chromatic.wav se guardó en la carpeta seleccionada.</string>
+    <string name="status_done_pitched">Listo. chromatic.wav y pitched_samples se guardaron en la carpeta seleccionada.</string>
+
+    <string name="error_prefix">Error: %1$s</string>
+    <string name="error_no_folder">Primero selecciona la carpeta de muestras.</string>
+    <string name="error_bad_range">El rango debe ser un número entero mayor que 0.</string>
+    <string name="error_bad_gap">La separación debe ser un número de segundos (0 o más).</string>
+    <string name="error_no_samples">No se encontraron muestras. La carpeta necesita archivos llamados 1.wav, 2.wav, …</string>
+    <string name="error_folder_access">No se puede acceder a la carpeta seleccionada. Selecciónala de nuevo.</string>
+</resources>

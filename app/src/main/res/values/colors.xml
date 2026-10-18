@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Mismo fondo que la version de PC (248, 248, 248) -->
+    <color name="app_background">#F8F8F8</color>
+</resources>
