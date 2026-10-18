@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chromatic Scale Generator</string>
+    <string name="language">Language</string>
+    <!-- Shown the first time the app opens, before a language is chosen: same text in every language -->
+    <string name="choose_language" translatable="false">Choose your language / Elige tu idioma / Escolha o idioma</string>
+    <string name="sample_folder">Sample folder:</string>
+    <string name="select_folder">Select a folder</string>
+    <string name="no_folder_selected">No folder selected</string>
+    <string name="starting_note">Starting note:</string>
+    <string name="starting_octave">Starting octave:</string>
+    <string name="range">Range:</string>
+    <string name="sample_gap">Sample gap (seconds):</string>
+    <string name="pitched">Pitched</string>
+    <string name="dump_samples">Dump individual pitched samples</string>
+    <string name="generate">Generate Chromatic</string>
+    <string name="folder_hint">The folder must contain the samples named 1.wav, 2.wav, 3.wav… The results (chromatic.wav and the pitched_samples folder) are written to the same folder.</string>
+
+    <string name="status_ready">Ready.</string>
+    <string name="status_praat_ready">Praat %1$s ready.</string>
+    <string name="status_copying">Reading samples…</string>
+    <string name="status_working">Generating… %1$d / %2$d</string>
+    <string name="status_saving">Saving results to the folder…</string>
+    <string name="status_done">Done. chromatic.wav was saved in the selected folder.</string>
+    <string name="status_done_pitched">Done. chromatic.wav and pitched_samples were saved in the selected folder.</string>
+
+    <string name="error_prefix">Error: %1$s</string>
+    <string name="error_no_folder">Select the sample folder first.</string>
+    <string name="error_bad_range">Range must be a whole number greater than 0.</string>
+    <string name="error_bad_gap">Sample gap must be a number of seconds (0 or more).</string>
+    <string name="error_no_samples">No samples found. The folder needs files named 1.wav, 2.wav, …</string>
+    <string name="error_folder_access">Cannot access the selected folder. Select it again.</string>
+</resources>

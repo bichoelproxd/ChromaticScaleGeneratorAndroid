@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Português (Brasil) -->
+<resources>
+    <string name="language">Idioma</string>
+    <string name="sample_folder">Pasta de amostras:</string>
+    <string name="select_folder">Selecionar pasta</string>
+    <string name="no_folder_selected">Nenhuma pasta selecionada</string>
+    <string name="starting_note">Nota inicial:</string>
+    <string name="starting_octave">Oitava inicial:</string>
+    <string name="range">Faixa (semitons):</string>
+    <string name="sample_gap">Pausa entre as amostras (segundos):</string>
+    <string name="pitched">Com tom ajustado</string>
+    <string name="dump_samples">Salvar cada amostra com seu tom</string>
+    <string name="generate">Gerar cromática</string>
+    <string name="folder_hint">A pasta deve conter as amostras com os nomes 1.wav, 2.wav, 3.wav… Os resultados (chromatic.wav e a pasta pitched_samples) são salvos na mesma pasta.</string>
+
+    <string name="status_ready">Pronto.</string>
+    <string name="status_praat_ready">Praat %1$s pronto.</string>
+    <string name="status_copying">Lendo as amostras…</string>
+    <string name="status_working">Gerando… %1$d / %2$d</string>
+    <string name="status_saving">Salvando os resultados na pasta…</string>
+    <string name="status_done">Concluído. O arquivo chromatic.wav foi salvo na pasta selecionada.</string>
+    <string name="status_done_pitched">Concluído. O arquivo chromatic.wav e a pasta pitched_samples foram salvos na pasta selecionada.</string>
+
+    <string name="error_prefix">Erro: %1$s</string>
+    <string name="error_no_folder">Selecione primeiro a pasta de amostras.</string>
+    <string name="error_bad_range">A faixa deve ser um número inteiro maior que 0.</string>
+    <string name="error_bad_gap">A pausa deve ser um número de segundos (0 ou mais).</string>
+    <string name="error_no_samples">Nenhuma amostra encontrada. A pasta precisa de arquivos chamados 1.wav, 2.wav, …</string>
+    <string name="error_folder_access">Não foi possível acessar a pasta selecionada. Selecione-a novamente.</string>
+</resources>
